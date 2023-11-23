@@ -1,0 +1,71 @@
+GET http://localhost:3000/services
+
+###
+
+POST http://localhost:3000/user/signup
+Content-Type: application/json
+
+{
+    "name":"Ayussh",
+    "email":"abcaa.asssb@email.com",
+    "password":"234423",
+    "mobile":435237866
+}
+
+###
+
+POST http://localhost:3000/user/login
+Content-Type: application/json
+
+{
+    "email":"abcaa.asssb@email.com",
+    "password":"234423"
+}
+
+###
+
+POST http://localhost:3000/user/get
+Content-Type: application/json
+Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2FhLmFzc3NiQGVtYWlsLmNvbSIsInVzZXJJZCI6IjY1NWUxMmE1Mjg3MDA3MzA1N2NiMTk0NSIsImlhdCI6MTcwMDY2NDU5NSwiZXhwIjoxNzAwNjcxNzk1fQ.cqOo1mhbegmZkiS301LgJcxtM4I6xRH0nTAGiMV66cg"
+
+{
+    "id":"6545f281e930937982aac922"
+}
+
+
+###
+
+GET  http://localhost:3000/services
+
+
+###
+
+POST  http://localhost:3000/services/get
+Content-Type: application/json
+
+{
+    "id":"65599bdb2894783b20177abe"
+}
+###
+
+POST  http://localhost:3000/services/
+Content-Type: application/json
+
+{
+    "id":"655f4ed88dec8d7fcfa768a7",
+    "service": {
+    "serviceName":"Service ",
+    "name":" Service Name",
+    "image":" String",
+    "description":" String",
+    "contact":" mongoose",
+    "address":" mongoose",
+    "businessHours":" mongoose",
+    "pricing":" mongoose",
+    "serviceArea":" String",
+    "teamMembers":" mongoose",
+    "paymentMethods":" String",
+    "tools":" String",
+    "overallPriceRange":" String"
+    }
+}
