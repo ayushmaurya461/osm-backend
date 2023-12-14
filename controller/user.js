@@ -21,7 +21,7 @@ exports.signup = (req, res) => {
           } else {
             const user = new User({
               _id: new mongoose.Types.ObjectId(),
-              name: req.body.email,
+              name: req.body.name,
               email: req.body.email,
               mobile: req.body.mobile,
               password: hash,
@@ -74,7 +74,9 @@ exports.login = (req, res, next) => {
         });
       } else {
         bcrypt.compare(req.body.password, user[0].password, (err, result) => {
-          if (err) {
+          console.log(err);
+          console.log(result);
+          if (!result) {
             res.status(500).json({
               message: "Invalid email or password",
             });
@@ -129,10 +131,12 @@ exports.getAUser = (req, res, next) => {
         id: user.id,
         email: user.email,
         mobile: user.mobile,
+        name: user.name,
         userType: user.userType,
         city: user.city,
         state: user.state,
         image: user.image,
+        service: user.service,
         address: user.address,
       });
     })
@@ -189,6 +193,7 @@ exports.changeUserType = (req, res, next) => {
       if (response.modifiedCount) {
         res.status(200).json({
           message: "Success",
+          userType: req.body.userType,
         });
       } else {
         res.status(500).json({
@@ -204,17 +209,12 @@ exports.changeUserType = (req, res, next) => {
 };
 
 exports.updateService = (req, res, next) => {
+  console.log("Hello");
   User.updateOne({ _id: req.body.id }, { $set: { service: req.body.service } })
     .then((response) => {
-      if (response.modifiedCount) {
-        res.status(200).json({
-          message: "Success",
-        });
-      } else {
-        res.status(500).json({
-          message: "Try again later",
-        });
-      }
+      res.status(200).json({
+        message: "Success",
+      });
     })
     .catch((err) => {
       res.status(500).json({

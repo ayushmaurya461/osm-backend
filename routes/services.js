@@ -21,9 +21,15 @@ router.get("/", serviceController.getAllServices);
 
 router.post("/get", serviceController.getAService);
 
+router.post("/review", serviceController.postReview);
+
 router.delete("/", serviceController.delete);
 
 router.post("/update", serviceController.update);
+
+router.post("/featured", serviceController.featured);
+
+router.post("/search", serviceController.search);
 
 router.post(
   "/update-profile",

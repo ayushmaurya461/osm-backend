@@ -22,8 +22,6 @@ router.post("/login", userController.login);
 
 router.post("/get", checkAuth, userController.getAUser);
 
-router.post("/update", userController.update);
-
 router.post(
   "/update-profile",
   upload.single("file"),
@@ -32,7 +30,9 @@ router.post(
 
 router.patch("/change-user-type", userController.changeUserType);
 
-router.patch("/update-service", userController.updateService);
+router.post("/update-service", userController.updateService);
+
+router.post("/update", userController.update);
 
 router.post("/validate", checkAuth, userController.validateUser);
 

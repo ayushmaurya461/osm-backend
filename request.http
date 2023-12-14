@@ -38,6 +38,18 @@ Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFiY2Fh
 GET  http://localhost:3000/services
 
 
+
+###
+
+POST  http://localhost:3000/services/review
+Content-Type: application/json
+
+{
+    "userId":"6545f281e930937982aac922",
+    "id":"656f7f7a283326925e596a9f",
+    "review":"Awesome",
+    "rating":3.5
+}
 ###
 
 POST  http://localhost:3000/services/get

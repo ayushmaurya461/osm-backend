@@ -11,10 +11,14 @@ const productSchema = mongoose.Schema({
   businessHours: mongoose.Schema.Types.Mixed,
   pricing: mongoose.Schema.Types.Mixed,
   serviceArea: String,
+  license: mongoose.Schema.Types.Mixed,
+  serviceCategories: mongoose.Schema.Types.Mixed,
   teamMembers: mongoose.Schema.Types.Mixed,
-  paymentMethods: String,
-  tools: String,
-  overallPriceRange: String,
+  paymentMethods: mongoose.Schema.Types.Mixed,
+  tools: mongoose.Schema.Types.Mixed,
+  overallPriceRange: mongoose.Schema.Types.Mixed,
+  faq: mongoose.Schema.Types.Mixed,
+  reviews: mongoose.Schema.Types.Mixed,
 });
 
 module.exports = mongoose.model("Service", productSchema);

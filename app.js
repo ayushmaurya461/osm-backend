@@ -29,8 +29,4 @@ app.use("/uploads", express.static("uploads"));
 app.use("/services", serviceRouter);
 app.use("/user", usersRouter);
 
-app.use(function (req, res, next) {
-  next(createError(404));
-});
-
 module.exports = app;
